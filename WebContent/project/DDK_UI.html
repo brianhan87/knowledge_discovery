@@ -1,0 +1,279 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>EKP-KAIST</title>
+
+    <script type="text/javascript" src="/kirc_ekp/project/static/js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="/kirc_ekp/project/static/Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script type="text/javascript" src="/kirc_ekp/project/static/Semantic-UI-CSS-master/components/checkbox.js"></script>
+    <script type="text/javascript" src="/kirc_ekp/project/static/js/base.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    <script src="jquery.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="client.js"></script>
+
+    
+
+
+
+    <link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/Semantic-UI-CSS-master/components/checkbox.min.css">
+    <link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/css/daterangepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/css/jquery.pan.css">
+    <link rel="stylesheet" href="/kirc_ekp/project/static/css/base.css">
+    
+    
+</head>
+
+<style>
+    .inactive-item {
+    display: none;
+}
+
+.hidden-item {
+    visibility: hidden;
+}
+.dropdown{
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    padding: 0.5em;
+    min-width: 10em;
+    min-height: 2.7142em;
+    font-size: 1rem;
+
+}
+.ui.pagination.menu .active.item {
+    border-top: none;
+    padding-top: .92857143em;
+    background-color: rgba(0,0,0,.25);
+    color: rgba(0,0,0,.95);
+    box-shadow: none;
+}
+
+#mask {  
+  position:absolute;  
+  left:0;
+  top:0;
+  z-index:9000;  
+  background-color:black;  
+  display:none;  
+}
+
+.window{
+      display: none;
+      position:absolute;  
+      left:100px;
+      top:100px;
+      z-index:10000;
+    }
+
+
+.layer {
+      position: fixed;
+    width: 40%;
+    left: 50%;
+    margin-left: -20%; /* half of width */
+    height: 300px;
+    top: 50%;
+    margin-top: -150px; /* half of height */
+    overflow: auto;
+
+    
+}
+
+</style>
+
+<body onload='loadInitialStat()' >
+
+
+
+
+    <div id="mask"></div>
+    <div class="window">
+            <img src="loading.gif" class="layer">
+    </div>
+
+
+    <div class="ui top fixed" style="margin-bottom: 10px;">
+  <div class="ui inverted segment">
+        
+            <h4 class="ui center aligned header" style="color:white;">
+                관련 의학 정보
+            </h4>
+        
+  </div>
+</div>
+
+    
+
+
+
+
+    <div class="ui main container">
+        <div class="ui center aligned topic">
+            <!-- keyword -->
+                <a href="#" class="ui label topic-item" style="margin: 5px;"><span class="  keyword">aaaa</span></a>
+            
+        </div>
+        <div class="ui two column centered grid" style="margin-top:20px;" >
+         <table  style="width: 1100px;height: 80px">
+             <tr>
+                 <td style="width: 150px">
+                 <span style="cursor: pointer" class="hidden-keywords-btn">
+                     <b><u>More Keywords...</u></b>
+                 </span>
+                 </td>
+                 <td style="width: 650px">
+                     <div class="ui center aligned topic-additional hidden-item">
+                <!-- keyword -->
+                    <a href="#" class="ui label topic-item-sub" style="margin: 5px;"><span class="  keyword">aaaa</span></a>
+                
+                    </div>
+                 </td>
+                 <td style="width: 300px">
+
+                  <dic class="navbar-form navbar-left">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Input Keyword">
+                    </div>
+                    <button  class="btn btn-default add-keyword-btn">Add</button>
+                  </div>
+
+                 </td>
+             </tr>
+         </table>
+        </div>
+        <div class="ui grid">
+            <div class="right floated left aligned three wide column">
+                <!-- drop down-->
+                
+                    <select id="sbox" name="search_method" class="dropdown">
+                    <option value="default">default</option>
+                    <option value="관찰값">관찰값</option>
+                    <option value="개체간영향">개체간영향</option>
+                    <option value="설명,사실">설명,사실</option>
+                    <option value="행동">행동</option>
+                    <option value="이유">이유</option>
+                    <option value="상태변화">상태변화</option>
+                    <option value="추론과정">추론과정</option>
+                    <option value="치료법">치료법</option>
+                    <option value="진단법">진단법</option>
+                    </select>
+
+            </div>
+        </div>
+        <div class="ui top attached tabular menu">
+            <button class="active item book-head-btn" data-tab="book">Book (1000)</button>
+            <button class="item paper-head-btn" data-tab="article">Article (1000)</button>
+        </div>
+        <div class="ui bottom attached tab segment active book-panel">
+            <div class="ui divided items book-item-container">
+                
+                    <div class="item book-item">
+                        <img class="ui middle aligned tiny image book-img" src="http://kirc.kaist.ac.kr/ebook_1_image/1_1.jpg" style="max-height: 100px;">
+                        <div class="middle aligned content ">
+                            <a class="header book-title" href="/book/%EC%86%8C%EB%B3%80%20%ED%98%88%EC%83%89%EC%86%8C%EC%99%80%20%EC%A0%81%ED%98%88%EA%B5%AC%EA%B0%80%20%EA%B2%80%EC%B6%9C%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%EC%9B%94%EA%B2%BD%ED%98%88%EC%9D%98%20%EC%98%A4%EC%97%BC,%20%EC%9A%94%EB%A1%9C%EA%B2%B0%EC%84%9D%20%EB%93%B1%EC%9D%98%20%EC%9A%94%EB%A1%9C%EA%B3%84%20%EC%A7%88%ED%99%98%EC%9D%B4%EB%82%98%20%EC%8B%AC%ED%95%9C%20%EC%9A%B4%EB%8F%99%20%EB%98%90%EB%8A%94%20%EB%AC%B4%EC%A6%9D%EC%83%81%EC%84%B1%20%ED%98%88%EB%87%A8%EC%99%80%20%EA%B4%80%EB%A0%A8%EC%9D%B4%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4./num=1/rel=none">Henry's Clinical Diagnosis and Management by Laboratory Methods</a>
+                            <div class="metadata">
+                                <strong class="book-date">August 16, 2011</strong> by <span class="book-author">Richard A. McPherson and Matthew R. Pincus</span>
+                            </div>
+                            <div class="ui contents book-detail" style="padding-top:15px; padding-bottom: 10px;">
+                                 Volume, 513  Mean <mark>Cell</mark> <mark>Hemoglobin</mark>, 513  Mean <mark>Cell</mark> <mark>Hemoglobin</mark> Concentration, 513  <mark>Manual</mark> <mark>Blood</mark> <mark>Cell</mark> Counts, 513  <mark>Erythrocyte</mark> Counts: <mark>Manual</mark>, 513  Reticulocyte <mark>Count</mark>: <mark>Manual</mark>, 514  <mark>Leukocyte</mark> Counts: <mark>Manual</mark> ...  AND PROCEDURES, 510  <mark>Hemoglobin</mark>, 510  <mark>Hemoglobin</mark> Derivatives, 510  Measurement of <mark>Hb</mark> Concentration, 511
+                            </div>
+                        </div>
+                    </div>
+                
+                   
+                
+            </div>
+        </div>
+        <div class="ui bottom attached  tab segment  paper-panel">
+         <div class="ui divided items paper-item-container">
+            
+            <div class="item paper-item">
+                <div class="middle aligned content">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="jR5qrXtjpmCcLLkASNVIn8mzAj4i9kO64P0tRVQvOm0sGHg6Rh1HRrtqUJLZHgBT">
+                    <a class="header title paper-title" href="" data-id="3281960">
+                        Effect of Different Doses of Aerobic Exercise on Total White Blood Cell (WBC) and WBC Subfraction Number in Postmenopausal Women: Results from DREWExercise Dose and WBC Subfractions</a>
+                    <div class="metadata">
+                        <span class="description paper-author"> Johannsen Neil  M.  Swift Damon  L.  Johnson William  D.  Dixit Vishwa  D.  Earnest Conrad  P.  Blair Steven  N.  Church Timothy  S.  Calbet Jose  A.  L.</span><br>
+                        <span class="date paper-date">PLoS One plos plosone , 2012 1722012</span>
+                    </div>
+                    <div class="ui contents paper-detail" style="padding-top:15px; padding-bottom: 10px;">
+                        Background Elevated total <mark>white</mark> <mark>blood</mark> <mark>cell</mark> (<mark>WBC</mark>) <mark>count</mark> is associated with an increased risk of coronary heart <mark>disease</mark> and death. Aerobic exercise is associated with lower total <mark>WBC</mark>, neutrophil ...  (dose) on total <mark>WBC</mark> and <mark>WBC</mark> subfraction counts. Purpose To examine the effects of 3 different doses
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div>
+
+
+
+
+        <div class="ui center aligned grid">
+        <div class="ui column grid" style="margin:20px;">
+           <div class="column">
+                
+                <!-- pagination-->
+                 <a class="before-button"><i class="chevron left icon"></i></a>
+
+                <div class="ui pagination menu">
+                    
+                        <a  class="item item-pagenum page-num-1">1</a>
+                    
+                        <a  class="item item-pagenum page-num-2">2</a>
+                    
+                        <a  class="item item-pagenum page-num-3">3</a>
+                    
+                        <a  class="item item-pagenum page-num-4">4</a>
+                    
+                        <a  class="item item-pagenum page-num-5">5</a>
+                    
+                        <a  class="item item-pagenum page-num-6">6</a>
+                    
+                        <a  class="item item-pagenum page-num-7">7</a>
+                    
+                        <a  class="item item-pagenum page-num-8">8</a>
+                    
+                        <a  class="item item-pagenum page-num-9">9</a>
+                    
+                        <a  class="item item-pagenum page-num-10">10</a>
+                    
+                </div>
+                
+                    <a class="next-button"><i class="chevron right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ui black inverted vertical footer segment" style="margin-top:50px;">
+  <div class="ui center aligned container">
+    <div class="ui stackable inverted grid">
+
+    </div>
+  </div>
+</div>
+
+<!--
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var diagnosis = location.href.substr(
+                location.href.lastIndexOf('=') + 1
+            );
+            console.log('val : ' + diagnosis);
+        });
+    </script>
+!-->
+
+<script src="bookControl.js"></script>
+</body>
+</html>

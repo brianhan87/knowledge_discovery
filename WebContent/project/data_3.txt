@@ -1,0 +1,98 @@
+﻿{
+"contents_list": 
+[
+{
+  "id": 1,   
+  "title": "Hyperchromasia", 
+  "range": "0-1", 
+  "description": "색깔"
+},
+{
+  "id": 2,   
+  "title": "Pleomorphism", 
+  "range": "0-1", 
+  "description": "찌그러진 상태"
+},
+{
+  "id": 3,   
+  "title": "Nucleolei", 
+  "range": "0-1", 
+  "description": "핵 안의 소체"
+},
+{
+  "id": 4,   
+  "title": "Mitoses", 
+  "range": "0-1", 
+  "description": "핵 분열"
+},
+{
+  "id": 5,   
+  "title": "Increase of N/C ratio", 
+  "range": "0-1", 
+  "description": "세포와 핵의 비율"
+},
+{
+  "id": 6,   
+  "title": "Atypia", 
+  "range": "0-2", 
+  "description": "얼마나 나쁜지"
+},
+{
+  "id": 7,   
+  "title": "Necrosis", 
+  "range": "0-2", 
+  "description": "괴사"
+},
+{
+  "id": 8,   
+  "title": "Stromal invasion", 
+  "range": "0-2", 
+  "description": "주위 조직 침범"
+},
+{
+  "id": 9,   
+  "title": "Tubular type", 
+  "range": "0-1", 
+  "description": "관 모양"
+},
+{
+  "id": 10,   
+  "title": "Signet ring cell", 
+  "range": "0-1", 
+  "description": "반지 세포 모양"
+},
+{
+  "id": 11,   
+  "title": "Mucinous", 
+  "range": "0-1", 
+  "description": "점액 분비 유무"
+},
+{
+  "id": 12,   
+  "title": "Squamous", 
+  "range": "0-1", 
+  "description": "벽돌 모양"
+},
+{
+  "id": 13,   
+  "title": "Small cell", 
+  "range": "0-1", 
+  "description": "신경 호르몬 분비"
+},
+{
+  "id": 14,   
+  "title": "Spindle cell", 
+  "range": "0-1", 
+  "description": "육종"
+},
+{
+  "id": 15,   
+  "title": "Papilary", 
+  "range": "0-1", 
+  "description": "나뭇가지 모양"
+}
+
+],
+"total_cnt":"15"
+}
+

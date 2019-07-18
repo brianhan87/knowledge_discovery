@@ -1,0 +1,54 @@
+a, h1, h2, h3 {
+    display: inline;
+}
+
+a {
+    cursor:pointer;
+}
+
+.min, .average, .max {
+    position: relative;
+    min-height: 16px;
+    min-width: 7em;
+    float:left;
+}
+
+.min, .max {
+    background-color: #ff0000;
+}
+
+.average {
+    background-color: #1ddb16;
+}
+
+.mark {
+    position: relative;
+    z-index: 500;
+    margin-left:-5px;
+}
+
+.min {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.max {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.mark_left {
+    position: relative;
+    z-index: 500;
+    marigin-top:35px;
+
+}
+
+.check_active {
+    background-color: #A0A0A0;
+    color : white;
+}
+
+.opacity_cell {
+    opacity: 0.2;
+}

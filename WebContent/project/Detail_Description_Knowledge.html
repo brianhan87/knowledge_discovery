@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/Semantic-UI-CSS-master/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/Semantic-UI-CSS-master/components/checkbox.min.css">
+<link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/css/daterangepicker.min.css">
+<link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/css/jquery.pan.css">
+<link rel="stylesheet" href="/kirc_ekp/static/css/base.css">
+
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<title></title>
+
+<style>
+html {
+	width: 1600px;
+	height: 1000px;
+	margin: 0 auto;
+}
+
+header {
+	width: 100%;
+	height: 35px;
+	border: 1px solid #cccccc;
+	background-color: #000000;
+}
+
+
+#header_nav li {
+	font-size: 1em;
+	color: #ffffff;
+	list-style: none;
+	text-align: Center;
+	padding: 9px;
+	font-weight: bold;
+	text-valign: middle;
+}
+
+
+body {
+	width: 99%;
+	height: 95%;
+	margin: 0 auto;
+	text-align: Center;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+#main_keywords {
+	width: 80%;
+	height: 5%;
+	margin: 0 auto;
+	padding: 5px 20px 20px 5px;
+}
+
+#main_searchs {
+	width: 80%;
+	height: 5%;
+	margin: 0 auto;
+	padding: 8px 20px 20px 5px;
+}
+
+#main_arrange {
+	width: 80%;
+	height: 4%;
+	margin: 0 auto;
+	padding: 8px 20px 20px 5px;
+	text-align: right;
+}
+
+#main_select {
+	width: 80%;
+	height: 5%;
+	margin: 0 auto;
+	padding: 0px 20px 20px 0px;
+	text-align: left;
+}
+
+#main_informations {
+	width: 80%;
+	height: 74%;
+	border: 1px solid #cccccc;
+	margin: 0 auto;
+	padding: 0px 20px 20px 0px;
+}
+
+#main_list {
+	width: 80%;
+	height: 7%;
+	margin: 0 auto;
+	padding: 10px 20px 20px 0px;
+}
+
+.ui.label {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: baseline;
+    margin: 0 .14285714em;
+    background-color: #e8e8e8;
+    background-image: none;
+    padding: .5833em .833em;
+    color: rgba(0,0,0,.6);
+    text-transform: none;
+    font-weight: 700;
+    border: 0 solid transparent;
+    border-radius: .28571429rem;
+    -webkit-transition: background .1s ease;
+    transition: background .1s ease;
+}
+
+
+    
+</style>
+
+</head>
+
+<header>
+	<div id="header_nav">
+		<li><strong>관련 의학 정보</strong></li> <br />
+	</div>
+
+</header>
+
+<body>
+
+	<div id="main_keywords">
+    <a href="#" class="ui label topic-item" style="margin: 5px;"><span class="  keyword">aaaa</span></a>
+    
+    </div>
+
+	<div id="main_searchs">
+		<!-- 검색 -->
+		<div class="ui two column centered grid" style="margin-top:20px;">
+            <div class="column">
+                <div class="ui fluid search">
+                    <div class="ui fluid icon input">
+                        <input class="prompt" type="text" placeholder="Search..." onkeypress="if(event.keyCode==13) {button_click(); return false;}" autocomplete="off">
+                        <i class="search icon" onclick="button_click();"></i>
+                    </div>
+                    <div class="results"></div>
+                </div>
+            </div>
+        </div>
+		
+	</div>
+
+
+	<div id="main_arrange">
+
+		<!-- 정렬 방법 선택 -->
+
+		<div class="ui grid">
+            <div class="right floated left aligned three wide column">
+                <div class="ui selection dropdown" tabindex="0">
+                    <input type="hidden" name="정렬기준">
+                    <i class="dropdown icon"></i>
+                    <div class="text">
+                        
+                            정렬 기준
+                        
+                    </div>
+                    <div class="menu" tabindex="-1">
+                        <div class="item" data-value="0">defaultw</div>
+                        <div class="item" data-value="1">관찰값</div>
+                        <div class="item" data-value="2">개체간 영향</div>
+                        <div class="item" data-value="3">설명, 사실</div>
+                        <div class="item" data-value="4">행동</div>
+                        <div class="item" data-value="5">이유</div>
+                        <div class="item" data-value="6">상태변화</div>
+                        <div class="item" data-value="7">추론 과정</div>
+                        <div class="item" data-value="8">치료법</div>
+                        <div class="item" data-value="9">진단법</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!-- 
+		<select name="search_method" sytle="width: 8%">
+			<option value="defaultw">defaultw</option>
+			<option value="관찰값">관찰값</option>
+			<option value="개체간영향">개체간 영향</option>
+			<option value="설명사실">설명, 사실</option>
+			<option value="행동">행동</option>
+			<option value="이유">이유</option>
+			<option value="상태변화">상태변화</option>
+			<option value="추론과정">추론과정</option>
+			<option value="치료법">치료법</option>
+			<option value="진단법">진단법</option>
+		</select>
+		-->
+	</div>
+
+
+	<div id="main_select">
+		<button type="button" id="button-book" style="width:200px;outline:0;height:179%;background-color:white;border: 1px solid #cccccc;margin: 0; float: left;"class=" ">book</button>
+		<button type="button" id="button-article" style="width:200px;outline:0;height:179%;background-color:white;border: 1px solid #cccccc;margin: 0; float: left;"class=" ">article</button>
+	</div>
+
+	<div id="main_informations"></div>
+	<div id="main_list">1.2.3.4.5</div>
+
+</body>
+</html>

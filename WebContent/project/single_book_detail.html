@@ -1,0 +1,106 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>EKP-KAIST</title>
+
+    <script type="text/javascript" src="/kirc_ekp/project/static/js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="/kirc_ekp/project/static/Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script type="text/javascript" src="/kirc_ekp/project/static/Semantic-UI-CSS-master/components/checkbox.js"></script>
+    <script type="text/javascript" src="/kirc_ekp/project/static/js/base.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="/kirc_ekp/project/jquery.js"></script>
+    <script type="text/javascript" src="/kirc_ekp/project/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/kirc_ekp/project/client.js"></script>
+    <script type="text/javascript" src="/kirc_ekp/project/single_book_control.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/Semantic-UI-CSS-master/components/checkbox.min.css">
+    <link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/css/daterangepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/kirc_ekp/project/static/css/jquery.pan.css">
+    <link rel="stylesheet" href="/kirc_ekp/project/static/css/base.css">
+    
+    
+</head>
+
+
+<body onload='loadInitialStat()'>
+    <div class="ui top fixed" style="margin-bottom: 10px;">
+  <div class="ui inverted segment">
+        
+            <h4 class="ui center aligned header" style="color:white;">
+                관련 의학 정보
+            </h4>
+        
+  </div>
+</div>
+
+
+ 
+
+    <div class="ui main container">
+        
+            <div class="ui">
+                <div class="ui breadcrumb" style="margin-top: 20px;">
+                    <div class="section"><strong>Search for: </strong><a class="section diagnosis" >백혈구수(WBC)가  감소하고 림프구(Lymphocyte)가 증가하였습니다. 림프구는 다양한 감염(특히 바이러스 및 결핵), 면역자극에 의해서 증가합니다.</a></div>
+                    <span class="divider">/</span>
+                    <div class="active section book_title">Henry's Clinical Diagnosis and Management by Laboratory Methods</div>
+                </div>
+
+            </div>
+            <div class="ui clearing divider"></div>
+            <div class="ui grid" style="margin-top: 20px; margin-bottom: 30px;">
+                <div class="six wide column">
+                    <img class="ui middle aligned image image_part" src="http://kirc.kaist.ac.kr/ebook_1_image/1_1.jpg" style="min-width: 100%; max-height: 450px;">
+                </div>
+                <div class="ten wide column" style="padding-left: 50px;">
+                    <h1 class="header book_title">Henry's Clinical Diagnosis and Management by Laboratory Methods</h1><br><br>
+                    <h3 class="header book_author">Richard A. McPherson and Matthew R. Pincus</h3>
+                    <h4 class="metadata">
+                        <strong class="date book_year">August 16, 2011</strong>
+                        
+                    </h4>
+                    <div class="ui clearing divider"></div>
+                    <div class="ui shape">
+                        <div class="sides">
+                            <p class="current active side content book_content" data-id="1473">      Quantitative White Blood Cell Abnormalities  The WBC count encompasses several types of commonly circulating nucleated cells, including granulocytes  (principally mature neutrophils, basophils, and eosinophils), lymphocytes, and monocytes. It should be noted  that absolute concentrations (and not percentages) 
+                        </div>
+                    </div>
+                    <div class="ui clearing divider"></div>
+                            <div class="ui two column centered grid" style="margin-bottom: 50px;">
+                        <div class="four column centered row">
+                            <button class="ui blue basic left labeled icon button previous previous-button" style="margin-right: 10px;" onclick="click_previous();">
+                                <i class="left arrow icon"></i>
+                                이전 문단
+                            </button>
+                            <button class="ui blue right labeled icon button next  next-button" onclick="click_next();">
+                                <i class="right arrow icon"></i>
+                                다음 문단
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+
+
+    <div class="ui black inverted vertical footer segment" style="margin-top:50px;">
+  <div class="ui center aligned container">
+    <div class="ui stackable inverted grid">
+
+    </div>
+  </div>
+</div>
+
+</body>
+
+ 
+</html>

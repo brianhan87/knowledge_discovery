@@ -1,0 +1,19 @@
+﻿{
+"contents_list": 
+[
+{
+  "id": 1,   
+  "title": "Proliferation", 
+  "range": "0-1", 
+  "description": "증식"
+},
+{
+  "id": 2,   
+  "title": "Fundic gland", 
+  "range": "0-1", 
+  "description": "위저선"
+}
+],
+"total_cnt":"2"
+}
+

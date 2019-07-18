@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<link href="bootstrap.min.css" rel="stylesheet" />
+<script src="jquery.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="client.js"></script>
+
+<title></title>
+
+<style>
+.modal-change-table-block
+{
+	display: block;
+}
+
+.rule_table>tbody>tr>td.rule-hidden-row
+{
+	font-size: 2px;
+	line-height: 0.7;
+	border:0px;
+	visibility: hidden;
+
+}
+.rule_table>tbody>tr>td.rule-hidden-column
+{
+	font-size: 2px;
+	line-height: 0.7;
+	border:0px;
+	visibility: hidden;
+}
+
+
+.rule_table>tbody>tr>td.rule_title
+{
+	padding: 5px;
+    line-height: 1.7;
+    outline-width:10;
+    width: 300px;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    margin: 10px;
+}
+.rule_table>tbody>tr>td.rule_value_1, .rule_table>tbody>tr>td.rule_value_2
+{
+	padding: 5px;
+    line-height: 1.7;
+    outline-width:10;
+    width: 30px;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    margin: 10px;
+}
+.rule_table>tbody>tr>td.rule_property
+{
+	padding: 5px;
+    line-height: 1.7;
+    outline-width:10;
+    width: 30px;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    margin: 10px;
+}
+
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 5.5px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    margin-left: 10px
+}
+
+.rule-table-3-1>tbody>tr>td.rule_title,.rule-table-3-2>tbody>tr>td.rule_title ,.rule-table-3-3>tbody>tr>td.rule_title {
+    padding: 5px;
+    line-height: 1.7;
+    outline-width:10;
+    width: 73%;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    margin: 10px;
+    
+}
+.rule-table-3-1>tbody>tr>td.rule_property,.rule-table-3-2>tbody>tr>td.rule_property,.rule-table-3-3>tbody>tr>td.rule_property{
+ padding: 5px;
+    line-height: 1.7;
+    outline-width:10;
+    width: 10%;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    margin: 5px;
+}
+.rule-table-3-1>tbody>tr>td.rule_value,.rule-table-3-2>tbody>tr>td.rule_value,.rule-table-3-3>tbody>tr>td.rule_value{
+ padding: 5px;
+    line-height: 1.7;
+    outline-width:10;
+    width: 10%;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    margin: 10px;
+}
+.rule-table-3-1>tbody>tr>td.rule-hidden-row,.rule-table-3-2>tbody>tr>td.rule-hidden-row,.rule-table-3-3>tbody>tr>td.rule-hidden-row
+{
+	font-size: 2px;
+	line-height: 0.7;
+	border:0px;
+	visibility: hidden;
+
+}
+.rule-table-3-1>tbody>tr>td.rule-hidden-column,.rule-table-3-2>tbody>tr>td.rule-hidden-column,.rule-table-3-3>tbody>tr>td.rule-hidden-column
+{
+	font-size: 2px;
+	line-height: 0.7;
+	border:0px;
+	visibility: hidden;
+}
+
+
+
+.table_3_head>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    
+    line-height: 1.42857143;
+    vertical-align: top;
+}
+.table_3_head_title{
+	border: 1px solid #ddd;
+
+}
+.summary-item{
+	background-color: #FEF9E7;
+	border-width: 3px; 
+	
+
+
+}
+.summary-hidden-item
+{
+	visibility: hidden;
+}
+.inactive-item {
+display: none;
+}
+
+.inactive-table {
+opacity: 0.6;
+cursor: pointer;
+}
+.active-table{
+	background-color: #F1F8E0;
+}
+
+.red-Background{
+	background-color: red;
+	opacity: 0.8;
+}
+.yellow-Background{
+	background-color: yellow;
+	opacity: 0.8;
+}
+.orange-Background{
+	background-color: orange;
+	opacity: 0.8;
+}
+
+
+.red-Border{
+	border:2px solid red;
+	
+}
+.yellow-Border{
+	border:2px solid yellow;
+}
+.orange-Border{
+	border:2px solid orange;
+}
+
+
+
+
+.clear-Background{
+	background-color: white;
+}
+.content-value {
+	 text-align: center;
+	 color: black;}
+.button-row{
+	border: 0px;
+}
+
+	.patient-select {
+	background-color: #F1F8E0;
+}
+	.inactive-item-gray {
+	background-color: #cfcfcf;
+}
+.scrollBlind{
+    width:5%;
+    height:100%;
+    overflow-y:scroll;
+}
+
+.button {
+	border: 1x solid #ff0080; /*---테두리 정의---*/
+	background-Color: #FAFAFA; /*--백그라운드 정의---*/
+	font: 0.8em; /*--폰트 정의---*/
+	font-weight: bold; /*--폰트 굵기---*/
+	color: #000000; /*--폰트 색깔---*/
+	height: 100%; /*--버튼 크기---*/
+}
+
+.button_center {
+	border: 1x solid #ff0080; /*---테두리 정의---*/
+	background-Color: #CEE3F6; /*--백그라운드 정의---*/
+	font: 0.8em; /*--폰트 정의---*/
+	font-weight: bold; /*--폰트 굵기---*/
+	color: #000000; /*--폰트 색깔---*/
+	height: 100%; /*--버튼 크기---*/
+	width: 50%; /*--버튼 크기---*/
+	border-radius: .28571429rem;
+	align-items: center;
+}
+
+.button_diagnosis {
+	border: 1x solid #ff0080; /*---테두리 정의---*/
+	background-Color: #FAFAFA; /*--백그라운드 정의---*/
+	font: 0.8em; /*--폰트 정의---*/
+	font-weight: bold; /*--폰트 굵기---*/
+	color: #000000; /*--폰트 색깔---*/
+	height: 10%; /*--버튼 크기---*/
+	width: 100%; /*--버튼 크기---*/
+}
+
+mark {
+    background-color: yellow;
+    color: black;
+}
+
+.ui.label {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: baseline;
+    margin: 0 .14285714em;
+    background-color: #e8e8e8;
+    background-image: none;
+    padding: .5833em .833em;
+    color: rgba(0,0,0,.6);
+    text-transform: none;
+    font-weight: 700;
+    border: 0 solid transparent;
+    border-radius: .28571429rem;
+    -webkit-transition: background .1s ease;
+    transition: background .1s ease;
+}
+
+
+.text-range{
+	width:100%;
+}
+.text-title{
+	width:100%;
+}
+
+.yjTableItem{
+	
+	
+	font-size: 1em;
+	padding: 0;
+	margin: 0;
+	
+}
+.content-id-1{
+	width: 10%
+}
+.content-title-1
+{width: 55%
+}
+.content-range-1
+{
+	width: 20%;
+
+}
+.content-value-1
+{
+	width: 10%
+}
+
+.content-id-2{
+	width: 10%
+}
+.content-title-2
+{width: 55%
+}
+.content-range-2
+{
+	width: 20%;
+
+}
+.content-value-2
+{
+	width: 10%
+}
+.content-id-3{
+	width: 10%
+}
+.content-title-3
+{width: 55%
+}
+.content-range-3
+{
+	width: 20%;
+
+}
+.content-value-3
+{
+	width: 10%
+}
+.yjTableItemHeader{
+	
+	
+	font-size: 1em;
+	padding: 0;
+	margin: 0;
+	font-style: bold;
+	
+
+}
+
+
+
+
+.txtbox {
+	height: 100%; 
+}
+
+
+html {
+	width: 1800px;
+	height: 1100px;
+	margin: 0 auto;
+}
+
+header {
+	width: 100%;
+	height: 35px;
+	border: 1px solid #cccccc;
+	background-color: #000000;
+}
+
+#header_nav li {
+	font-size: 1em;
+	color: #ffffff;
+	list-style: none;
+	text-align: Center;
+	padding: 9px;
+	font-weight: bold;
+	text-valign:middle;
+	}
+
+body {
+	width: 99%;
+	height: 95%;
+	margin: 0 auto;
+	text-align: Center;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+
+
+
+#mask {  
+  position:absolute;  
+  left:0;
+  top:0;
+  z-index:9000;  
+  background-color:black;  
+  display:none;  
+}
+
+.window{
+      display: none;
+      position:absolute;  
+      left:100px;
+      top:100px;
+      z-index:10000;
+    }
+
+
+.layer {
+    position: fixed;
+    width: 40%;
+    left: 50%;
+    margin-left: -20%; /* half of width */
+    height: 300px;
+    top: 50%;
+    margin-top: -150px; /* half of height */
+    overflow: auto;
+
+    
+    
+}
+#main_top {
+	width: 100%;
+	height: 6%;
+	border: 1px solid #cccccc;
+}
+
+#main_top div:nth-child(1) {
+	width: 35%;
+	height: 100%;
+	float: left;
+}
+
+#main_top div:nth-child(2) {
+	width: 65%;
+	height: 100%;
+	float: left;
+}
+
+#main_top2 {
+	width: 90%;
+	height: 10%;
+	float: Left;
+	border: 1px solid #cccccc;
+}
+
+#main_top2 div {
+	border: 1px solid #cccccc;	
+	vertical-align: middle;
+}
+
+
+#main_top2 div:nth-child(1) {
+	width: 6%;
+	height: 30%;
+	float: left;
+}
+
+#main_top2 div:nth-child(2) {
+	width: 40%;
+	height: 30%;
+	float: left;
+}
+
+#main_top2 div:nth-child(3) {
+	width: 6%;
+	height: 30%;
+	float: left;
+}
+
+#main_top2 div:nth-child(4) {
+	width: 48%;
+	height: 30%;
+	float: left;
+}
+
+#main_top2 div:nth-child(5) {
+	width: 46%;
+	height: 70%;
+	float: left;
+}
+
+#main_top2 div:nth-child(6) {
+	width: 6%;
+	height: 30%;
+	float: left;
+}
+
+#main_top2 div:nth-child(7) {
+	width: 9%;
+	height: 30%;
+	float: left;
+}
+
+#main_top2 div:nth-child(8) {
+	width: 6%;
+	height: 30%;
+	float: left;
+}
+
+#main_top2 div:nth-child(9) {
+	width: 33%;
+	height: 30%;
+	float: left;
+}
+
+#main_top2 div:nth-child(10) {
+	width: 6%;
+	height: 40%;
+	float: left;
+}
+
+#main_top2 div:nth-child(11) {
+	width: 9%;
+	height: 40%;
+	float: left;
+}
+
+#main_top2 div:nth-child(12) {
+	width: 6%;
+	height: 40%;
+	float: left;
+}
+
+#main_top2 div:nth-child(13) {
+	width: 33%;
+	height: 40%;
+	float: left;
+}
+
+
+#main_left {
+	width: 10%;
+	height: 95%;
+	float: left;
+	border: 1px solid #cccccc;
+}
+
+#main_1 {
+	width: 60%;
+	height: 85%;
+	float: left;
+}
+
+#main_1 div {
+	border: 1px solid #cccccc;
+}
+
+#main_1 div:nth-child(1) {
+	width: 10%;
+	height: 3.5%;
+	float: Left;
+}
+
+#main_1 div:nth-child(2) {
+	width: 90%;
+	height: 3.5%;
+	float: Left;
+}
+
+
+#main_1 div:nth-child(3) {
+	width: 100%;
+	height: 64%;
+	float: left
+}
+
+#main_1 div:nth-child(4) {
+	width: 10%;
+	height: 3.5%;
+	float: Left;
+}
+
+#main_1 div:nth-child(5) {
+	width: 90%;
+	height: 3.5%;
+	float: Left;
+}
+
+#main_1 div:nth-child(5) {
+	width: 100%;
+	height: 29%;
+	float: Left;
+}
+
+
+
+
+
+#main_right_1 {
+	width: 30%;
+	height: 85%;
+	float: left;
+}
+
+#main_right_1 div {
+	border: 1px solid #cccccc;
+}
+
+#main_right_1 div:nth-child(1) {
+	width: 15%;
+	height: 3.5%;
+	float: left;
+}
+
+#main_right_1 div:nth-child(2) {
+	width: 85%;
+	height: 3.5%;
+	float: left;
+}
+
+#main_right_1 div:nth-child(3) {
+	width: 100%;
+	height: 16.5%;
+	float: left;
+}
+
+#main_right_1 div:nth-child(4) {
+	width: 15%;
+	height: 3.5%;
+	float: left;
+}
+
+#main_right_1 div:nth-child(5) {
+	width: 85%;
+	height: 3.5%;
+	float: left;
+}
+
+#main_right_1 div:nth-child(6) {
+	width: 100%;
+	height: 16.5%;
+	float: left;
+}
+
+#main_right_1 div:nth-child(7) {
+	width: 100%;
+	height: 5%;
+	float: left;
+}
+
+#main_right_1 div:nth-child(8) {
+	width: 30%;
+	height: 3.5%;
+	float: left;
+}
+#main_right_1 div:nth-child(9) {
+	width: 70%;
+	height: 3.5%;
+	float: left;
+}
+#main_right_1 div:nth-child(10) {
+	width: 100%;
+	height: 51.5%;
+	float: left;
+}
+.description {
+  background: #d0e9fa;
+  background-image: -webkit-linear-gradient(top, #d0e9fa, #2691b5);
+  background-image: -moz-linear-gradient(top, #d0e9fa, #2691b5);
+  background-image: -ms-linear-gradient(top, #d0e9fa, #2691b5);
+  background-image: -o-linear-gradient(top, #d0e9fa, #2691b5);
+  background-image: linear-gradient(to bottom, #d0e9fa, #2691b5);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 30px;
+  font-family: sans-serif;
+  color: #fafafa;
+  font-size: 15px;
+  padding: 5px 10px 10px 5px;
+  margin-top: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  width: 470px;
+  height: 90px;
+  line-height: 28px;
+  cursor: default;
+}
+
+
+</style>
+
+</head>
+
+<header>
+	<div id="header_nav">
+		<li><strong>조직 검사 시스템</strong></li> <br />
+	</div>
+
+</header>
+
+<body onload="loadInitialTable()">
+
+    <div id="mask"></div>
+    <div class="window">
+            <img src="loading.gif" class="layer">
+    </div>
+
+	<div id="main_top">
+		<div>
+			<table  border="1" width="100%" height="100%">
+				<tr>
+					<td width="9%" >판독자</td>
+					<td width="15%" bgcolor=#FAFAFA class="p-doctorName"></td>
+					<td width="9%" >판독구분</td>
+					<td width="15%" bgcolor=#FAFAFA class="p-result1"></td>
+					<td width="9%" >영업소</td>
+					<td width="15%" bgcolor=#FAFAFA class="p-hospital"></td>
+					<td width="9%"  >상태</td>
+					<td width="15%" bgcolor=#FAFAFA class="p-all"></td>
+				</tr>
+				<tr>
+					<td width="10%">접수일</td>
+					<td width="15%" bgcolor=#FAFAFA class="p-dateIn"></td>
+					<td width="10%">작업단계</td>
+					<td width="15%" bgcolor=#FAFAFA class="p-all"></td>
+					<td width="10%">병원</td>
+					<td width="15%" bgcolor=#FAFAFA class="p-hospital"></td>
+					<td width="10%">바코드</td>
+					<td width="15%" bgcolor=#FAFAFA></td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<table border="1" width="100%" height="100%">
+				<tr>
+					<td width="5%" rowspan="2" bgcolor=#D8D8D8>조회</td>
+					<td width="6%">접수일</td>
+					<td width="8%" bgcolor=#FAFAFA class="p-dateIn"></td>
+					<td width="6%">상태</td>
+					<td width="18%" bgcolor=#FAFAFA class="p-state"></td>
+					<td width="8%">결과확인</td>
+					<td width="8%" bgcolor=#FAFAFA class="p-result2"></td>
+					<td width="5%">보고</td>
+					<td width="5%" bgcolor=#FAFAFA class="p-result1"></td>
+					<td width="5%">병원</td>
+					<td width="25%" colspan="3" bgcolor=#FAFAFA class="p-hospital"></td>
+				</tr>
+				<tr>
+					<td width="6%">환자명</td>
+					<td width="8%" bgcolor=#FAFAFA class="p-patientName"></td>
+					<td width="6%">주민번호</td>
+					<td width="18%" bgcolor=#FAFAFA class="p-securityNumber"></td>
+					<td width="8%">나이</td>
+					<td width="8%" bgcolor=#FAFAFA class="p-age"></td>
+					<td width="5%">성별</td>
+					<td width="5%" bgcolor=#FAFAFA class="p-gender"> </td>
+					<td width="5%">차트번호</td>
+					<td width="8%" bgcolor=#FAFAFA class="p-chartNumber"> </td>
+					<td width="6%">검사일</td>
+					<td width="11%" bgcolor=#FAFAFA class="p-dateTest"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="main_left" class ="scrollBlind">
+		<table class="table table-bordered contents-item-container" width="100%">
+			<tr>
+				
+				<th style="text-align: center;">병리번호</th>
+				<th style="text-align: center;">환자명</th>
+			</tr>
+
+			<tr class="contents-item" style="cursor: pointer;">
+				<td class="content-pid"></td>
+				<td class="content-pname"></td>
+			</tr>
+		</table>
+	</div>
+
+		<div id="main_top2">
+		
+			<div style="background-color: #FFE4E1 ;padding-top:5px" >Gross</div>
+			<div ></div>
+			<div style="background-color: #FFE4E1;padding-top:5px" >조직정보</div>
+			<div ></div>
+			<div style="background-color: #FAFAFA;  overflow-y:scroll; padding-top: 8px" class="p-gross"> </div>
+			<div >SEQ</div>
+			<div >위치코드</div>
+			<div >조직개수</div>
+			<div >리마크</div>		
+			<div class="seq" style="padding-top: 3px"></div>
+			<div class="loc-info" style="padding-top: 3px"></div>
+			<div class="cell-parameter" style="padding-top: 3px"></div>
+			<div style="overflow-y:scroll; padding-top: 2px" class="p-remark"></div>	
+
+		</div>
+
+	<div id="main_1">
+		<div style="background-color:#FFE4E1;padding-top:5px">Micro</div>
+
+		<div>stomach</div>
+		<div>
+			<table class="table-area" style="width: 100%; height:100%">
+				<tr>
+					<th ></th>
+					<th ></th>
+					<th  colspan="2"> </th>
+				</tr>
+				<tr>
+					<td>
+						<table class="table table_yj table-bordered table1-1  " cellpadding=0 cellspacing=0 style="margin: 0; padding: 0 ;margin-left:10px;">
+							<tr class="yjTableItemHeader table1-space" >
+								<th colspan="2" style="text-align: center; background-color:black ; color:white" > 위염 (Gastritis)</th>
+								<th  style="text-align: center; background-color: black;color:white" >0-3</th>
+							</tr>
+								
+							<tr class="  yjTableItem table1-space">
+								<td class="content-id-1 yjTableItem ">1</td>
+								<td class="content-title-1 yjTableItem  ">H. pylori</td>
+								<td id="table1_var" class="content-value-1  yjTableItem ">  <input  type="number" class="content-value" maxlength='1' max=3 min=0 name="input_1_1" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_2_1');"  step="1" value=0 ></td>
+							</tr>
+							<tr class="  yjTableItem table1-space">
+								<td class="content-id-1 yjTableItem  ">2</td>
+								<td class="content-title-1 yjTableItem  " cellspacing=0 cellpading=0  >Neutrophilic infiltration</td>
+								
+								<td id="table1_var" class="content-value-1 ">  <input  type="number" class="content-value" maxlength='1'  max=3 min=0 name="input_2_1" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_3_1');" step="1" value=0 ></td>
+							</tr>
+
+							<tr class="  yjTableItem table1-space">
+								<td class="content-id-1  yjTableItem ">3</td>
+								<td class="content-title-1  yjTableItem ">Mononuclear cell infiltration</td>
+								
+								<td id="table1_var" class="content-value-1 ">  <input  type="number" class="content-value " maxlength='1' max=3 min=0 name="input_3_1" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_4_1');" step="1" value=0 ></td>
+							</tr>
+							<tr class="  yjTableItem table1-space">
+								<td class="content-id-1 yjTableItem  ">4</td>
+								<td class="content-title-1  yjTableItem ">Atrophy </td>
+								
+								<td id="table1_var" class="content-value-1 ">  <input   type="number" class="content-value " maxlength='1' max=3 min=0 name="input_4_1" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_5_1');" step="1" value=0  ></td>
+
+							</tr>
+							<tr class="  yjTableItem table1-space" >
+							
+								<td class="content-id-1 yjTableItem  ">5</td>
+								<td class="content-title-1  yjTableItem ">Intestinal metaplasia</td>
+								
+								<td id="table1_var" class="content-value-1 ">  <input  type="number" class="content-value " maxlength='1' max=3 min=0 name="input_5_1" onClick="this.select();"  onfocus="this.select();"onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'button');" step="1" value=0 ></td>
+							</tr>
+							<tr class=" additional-1 yjTableItem additional-feature table1-space" >
+							
+								<td class="content-id--additional yjTableItem  "></td>
+								<td class="content-title-1-additional  yjTableItem "></td>
+								
+								<td id="table1_var" class="content-value-1-additional ">  <input  type="number" class="content-value " maxlength='1' max=3 min=0 name="input_6_1" onClick="this.select();"  onfocus="this.select();"onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'button');" step="1"  ></td>
+							</tr>
+							<tr class="  yjTableItem " >
+							
+								<td colspan="3" style="visibility: hidden;"> empty space</td>
+								
+							</tr>
+						</table>
+
+						
+
+						<table class="table table_yj table-bordered  table2-1" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0 ;margin-left:10px  ;border-bottom:0px; border-left: 0px;">
+							<tr class="yjTableItemHeader table2-space"  >
+								<th colspan="2" style="text-align: center;background-color: black;color:white" > 용종 (Ployp)</th>
+								<th  style="text-align: center;background-color: black;color:white" >0-1</th>
+							</tr>
+							
+							<tr class="yjTableItem table2-space">
+							<td class="content-id-2 ">1</td>
+							<td class="content-title-2 ">Proliferation</td>			
+							<td id="table1_var" class="content-value-2 ">  <input  type="number" class="content-value" maxlength='1' max=1 min=0 name="input_1_2" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_2_2');"  step="1"   value=0 ></td>
+							</tr>
+							<tr class="yjTableItem table2-space">
+							<td class="content-id-2 ">2</td>
+							<td class="content-title-2 ">Fundic gland</td>
+							<td id="table1_var" class="content-value-2 ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_2_2" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'button');" step="1"  value=0 ></td>
+							</tr>
+							<tr class="yjTableItem additional-feature table2-space additional-2">
+							<td class="content-id-2-additional "></td>
+							<td class="content-title-2-additional "></td>
+							<td id="table1_var" class="content-value-2-additional ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_3_2" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'button');" step="1"   ></td>
+							</tr>
+
+							
+							<tr>
+								<td colspan="3" style="visibility: hidden;">empty</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="visibility: hidden;">empty</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="visibility: hidden;">empty</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="visibility: hidden;">empty</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="visibility: hidden;">empty</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="visibility: hidden;">empty</td>
+							</tr>
+
+
+						</table>
+					</td>
+					<td style="visibility:  hidden">
+						""
+					</td>
+					<td >
+						<table class="table_3_head" style="width: 98%; height: 100%;margin-right: 5px">
+							
+							<tr class="table_3_head_title table3-space">
+								<th colspan="2" style="text-align: center;background-color: black;color:white"> 선종 / 선암 / 암종 (Adenoma / Adenocarcinoma / Carcinoma) </th>
+							</tr>
+							<tr>
+								<td >
+									<table class="table table_yj table-bordered  table3-1" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0 ;border-bottom: 0px;border-right: 0px;border-left: 0px ">
+										<tr class="yjTableItemHeader table3-space"  >
+											<th colspan="2" style="text-align: center;" >Nucleus</th>
+											<th  style="text-align: center;" >0-1</th>
+										</tr>
+										
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">1</td>
+										<td class="content-title-3 ">Hyperchromasia</td>			
+										<td id="table1_var" class="content-value-3 ">  <input  type="number" class="content-value" maxlength='1' max=1 min=0 name="input_1_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_2_3');"  step="1"   ></td>
+										</tr>
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">2</td>
+										<td class="content-title-3 ">Pleomorphism</td>
+										<td id="table1_var" class="content-value-3 ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_2_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_3_3');" step="1"  ></td>
+										</tr>
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">3</td>
+										<td class="content-title-3 ">Nucleolei</td>
+										<td id="table1_var" class="content-value-3 ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_3_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_4_3');" step="1"  ></td>
+										</tr>
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3">4</td>
+										<td class="content-title-3">Mitoses</td>
+										<td id="table1_var" class="content-value-3 ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_4_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_5_3');" step="1"  ></td>
+										</tr>
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3">5</td>
+										<td class="content-title-3 ">Increase of N/C ratio</td>
+										<td id="table1_var" class="content-value-3 ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_5_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_7_3');" step="1"  ></td>
+										</tr>
+										
+										<tr class="yjTableItem table3-space additional-3">
+										<td class="content-id-3-additional"></td>
+										<td class="content-title-3-additional "></td>
+										<td id="table1_var" class="content-value-3-additional">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_6_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'button');" step="1"   ></td>
+										</tr>
+										<tr class="table3-space">
+											<td colspan="2"  style="text-align: center;">
+												Type of Tumor
+											</td>
+
+											<td  style="text-align: center;" >
+												0-1
+											</td>
+										</tr>
+										
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">6</td>
+										<td class="content-title-3 ">Tubular type</td>
+										<td id="table1_var" class="content-value-3 ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_7_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_8_3');" step="1"   ></td>
+										</tr>
+										
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">7</td>
+										<td class="content-title-3 ">Signet ring cell</td>
+										<td id="table1_var" class="content-value-3">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_8_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_9_3');" step="1"   ></td>
+										</tr>
+											
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">8</td>
+										<td class="content-title-3 ">Mucinous</td>
+										<td id="table1_var" class="content-value-3">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_9_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_10_3');" step="1"  ></td>
+										</tr>
+										
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">9</td>
+										<td class="content-title-3 ">Squamous</td>
+										<td id="table1_var" class="content-value-3">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_10_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_11_3');" step="1"  ></td>
+										</tr>
+											
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">10</td>
+										<td class="content-title-3 ">Small cell</td>
+										<td id="table1_var" class="content-value-3 ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_11_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_12_3');" step="1"   ></td>
+										</tr>
+											
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">11</td>
+										<td class="content-title-3 ">Spindle cell</td>
+										<td id="table1_var" class="content-value-3 ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_12_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_13_3');" step="1"   ></td>
+										</tr>
+											
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">12</td>
+										<td class="content-title-3 ">Papilary</td>
+										<td id="table1_var" class="content-value-3 ">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_13_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_15_3');" step="1"   ></td>
+										</tr>
+										<tr class="yjTableItem table3-space additional-3">
+										<td class="content-id-3-additional "></td>
+										<td class="content-title-3-additional "></td>
+										<td id="table1_var" class="content-value-3-additional">  <input type="number" class="content-value" maxlength='1'  max=1 min=0 name="input_14_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'button');" step="1"   ></td>
+										</tr>
+										
+
+									</table>
+								</td>
+
+								<td>
+									<table class="table table_yj table-bordered  table2-1" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0 ;border-bottom: 0px;border-right: 0px;border-left: 0px  ">
+										<tr class="yjTableItemHeader table3-space"  >
+											<th colspan="2" style="text-align: center;" >Tumor Grade</th>
+											<th  style="text-align: center;" >0-2</th>
+										</tr>
+										
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">13</td>
+										<td class="content-title-3 ">Atypia</td>			
+										<td id="table1_var" class="content-value-3 ">  <input  type="number" class="content-value" maxlength='1' max=2 min=0 name="input_15_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_16_3');"  step="1"   value=0 ></td>
+										</tr>
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">14</td>
+										<td class="content-title-3 ">Necrosis</td>
+										<td id="table1_var" class="content-value-3 ">  <input type="number" class="content-value" maxlength='1'  max=2 min=0 name="input_16_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'input_17_3');" step="1"  value=0 ></td>
+										</tr>
+										<tr class="yjTableItem table3-space">
+										<td class="content-id-3 ">15</td>
+										<td class="content-title-3 "> Stromal invasion</td>
+										<td id="table1_var" class="content-value-3">  <input type="number" class="content-value" maxlength='1'  max=2 min=0 name="input_17_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'button');" step="1"  value=0 ></td>
+										</tr>
+										<tr class="yjTableItem table3-space additional-3">
+										<td class="content-id-3-additional "></td>
+										<td class="content-title-3-additional "></td>
+										<td id="table1_var" class="content-value-3-additional ">  <input type="number" class="content-value" maxlength='1'  max=2 min=0 name="input_18_3" onClick="this.select();" onfocus="this.select();" onblur="contentsCheck(this);saveValueToTable();changeBackground(this);fillSummaryTable();" onkeyup="nextCol(1,this,'button');" step="1"   ></td>
+										</tr>
+										<tr>
+										<td colspan="3" style="visibility: hidden; border:0px;">empty</td>
+										</tr>
+
+										<tr style="margin-left: 3px">
+											<td colspan="3" class="summary-table content-value" style="background-color: black; color:white" >Feature Summary</td>
+										</tr>
+										<tr class="yjTableItem summary-item">
+										<td class="summary-id "></td>
+										<td class="summary-title "></td>
+										<td id="table1_var" class="summary-value " > <span>empty</span> </td>
+										</tr>
+										<tr class="yjTableItem summary-item">
+										<td class="summary-id "></td>
+										<td class="summary-title "> </td>
+										<td id="table1_var" class="summary-value "> <span>empty</span> </td>
+										</tr>
+										<tr class="yjTableItem summary-item">
+										<td class="summary-id "></td>
+										<td class="summary-title "> </td>
+										<td id="table1_var" class="summary-value">  <span>empty</span> </td>
+										</tr>
+										<tr class="yjTableItem summary-item">
+										<td class="summary-id "></td>
+										<td class="summary-title "></td>
+										<td id="table1_var" class="summary-value ">  <span>empty</span> </td>
+										</tr>
+										<tr class="yjTableItem summary-item">
+										<td class="summary-id "></td>
+										<td class="summary-title "> </td>
+										<td id="table1_var" class="summary-value "> <span>empty</span>  </td>
+										</tr>
+										<tr class="yjTableItem summary-item">
+										<td class="summary-id "></td>
+										<td class="summary-title "></td>
+										<td id="table1_var" class="summary-value ">  <span>empty</span> </td>
+										</tr>
+										<tr class="yjTableItem summary-item">
+										<td class="summary-id "></td>
+										<td class="summary-title "></td>
+										<td id="table1_var" class="summary-value ">  <span>empty</span></td>
+										</tr>
+										<tr class="yjTableItem summary-item">
+										<td class="summary-id "></td>
+										<td class="summary-title "> </td>
+										<td id="table1_var" class="summary-value "> <span>empty</span> </td>
+										</tr>
+										<tr class="yjTableItem summary-item">
+										<td class="summary-id "></td>
+										<td class="summary-title "> </td>
+										<td id="table1_var" class="summary-value "> <span>empty</span> </td>
+										</tr>
+										<tr style="border-bottom: 0px">
+											<td colspan="3" style="padding: 0px;border-bottom: 0px;border-left: 0px;border-right:  0px "  >
+
+												<button class="button button-diagnosis" name="diagnosis-btn" style="width: 80%;height: 100%; margin-top: 6px ; background-color: #CEE3F6;" >Diagnosis생성</button>
+											</td>
+										</tr>
+									</table>
+
+
+								</td>
+							</tr>
+							<tr>
+								
+						</tr>
+						</table>
+					</td>
+				</tr>
+				
+			</table>
+
+	 	</div>
+
+	
+		<div style="background-color:#FFE4E1;padding-top:5px">Rule</div>
+		
+		<div>    
+		<table style="width: 100%; height:100%;margin-left: 10px" class="rule-table-1 inactive-item">
+			<tr>
+			<td >
+				<table>
+				 <tr>
+				 	<td class="diagnosis-detail" id="diagnosis-detail-rule-1"></td>
+				 </tr>	
+				 <tr>
+				 	<td>
+				 		<img class=" graybar-img" src="graybar.png"  style="margin:5px; display: block; width: 100%; height: auto; max-height: 1.5px;"  />	
+				 	</td>
+				 </tr>
+				 <tr>
+				 	<td style="text-align:  center;" >
+
+				 		<table class="rule_table    "  style="margin-left: 10px; width: 90%; height:100%">					
+							<tr class="  yjTableItem ">
+								
+								<td class=" yjTableItem rule_title  " >  H.pylori          </td>
+								<td class="rule_value_1"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property HP">-</td>
+							</tr>
+							<tr ><td colspan="4" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem">
+								
+								<td class=" yjTableItem  rule_title"   >Neutrophilic infiltration</td>
+								<td class="rule_value_1"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property NI">-</td>
+								
+							</tr>
+							<tr ><td colspan="4" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem ">
+								
+								<td class=" yjTableItem rule_title ">    Mononuclear cell infiltration   </td>
+								<td class="rule_value_1"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property MCI">-</td>
+								
+								
+							</tr>
+							<tr ><td colspan="4" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem ">
+								
+								<td class="  yjTableItem rule_title">Atrophy </td>
+								<td class="rule_value_1"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property AT">-</td>
+								
+								
+
+							</tr>
+							<tr ><td colspan="4" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem " >
+							
+								
+								<td class="  yjTableItem rule_title">Intestinal metaplasia</td>
+								<td class="rule_value_1"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property IM">-</td>
+								
+							</tr>
+				 		</table>
+				 	</td>
+				 </tr>
+				</table>
+			</td>
+			<td>
+				<img src="rule_description.png" style="width:100%; height: auto;">
+			</td>
+			<tr>
+		</table>
+		<table style="width: 100%; height:100%;margin-left: 10px" class="rule-table-2 inactive-item">
+			<tr>
+			<td >
+				<table>
+				 <tr>
+				 	<td class="diagnosis-detail" id="diagnosis-detail-rule-2"></td>
+				 </tr>	
+				 <tr>
+				 	<td>
+				 		<img class=" graybar-img" src="graybar.png"  style="margin:5px; display: block; width: 100%; height: auto; max-height: 1.5px;"  />	
+				 	</td>
+				 </tr>
+				 <tr>
+				 	<td style="text-align:  center;" >
+
+				 		<table class="rule_table    "  style="margin-left: 10px; width: 90%; height:100%">					
+							<tr class="  yjTableItem ">
+								
+								<td class=" yjTableItem rule_title  " >  Proliferation          </td>
+								<td class="rule_value_2"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property FG">0.84</td>
+							</tr>
+							<tr ><td colspan="4" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem">
+								
+								<td class=" yjTableItem  rule_title"   >Fundic gland</td>
+								<td class="rule_value_2"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property PF"></td>
+								
+							</tr>
+							<tr ><td colspan="4" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							
+						
+				 		</table>
+				 	</td>
+				 </tr>
+				</table>
+			</td>
+			<td>
+				<img src="rule_description.png" style="width:100%; height: auto;">
+			</td>
+			<tr>
+		</table>
+		<table style="width: 100%; height:100%" class="rule-table-3  inactive-item">
+			<tr>
+			<td colspan="5" class="diagnosis-detail" id="diagnosis-detail-rule-3">asdadfafsdfdsfsdf</td>
+			</tr>
+			<tr>
+			 	<td colspan="5">
+			 		<img class=" graybar-img" src="graybar.png"  style="margin:5px; display: block; width: 100%; height: auto; max-height: 1.5px;"  />	
+			 	</td>
+			</tr>
+			<tr>
+				<td style="width: 32%;height: 100%">
+			 		<table class="rule-table-3-1"  style="align-self: center;margin-left: 5px">					
+						<tr class="  yjTableItem inactive-item rule-3-1-item ">
+							
+							<td class=" yjTableItem rule_title  ">           Hyperchromasia        </td>
+							<td class="rule_value">1</td>
+							<td class="rule-hidden-column">아아</td>
+							<td class="rule_property Hyperchromasia">-</td>
+						</tr>
+						<tr class="inactive-item rule-3-1-item-hidden" ><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+						<tr class="  yjTableItem inactive-item rule-3-1-item " >
+							
+							<td class=" yjTableItem  rule_title"   >Pleomorphism</td>
+							<td class="rule_value"></td>
+							<td class="rule-hidden-column">아아</td>
+							<td class="rule_property Pleomorphism">-</td>
+							
+						</tr>
+						<tr class="inactive-item rule-3-1-item-hidden" ><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+						<tr class="  yjTableItem  inactive-item rule-3-1-item  ">
+							
+							<td class=" yjTableItem rule_title ">    Nucleolei   </td>
+							<td class="rule_value"></td>
+							<td class="rule-hidden-column">아아</td>
+							<td class="rule_property Nucleolei">-</td>
+							
+							
+						</tr>
+						<tr class="inactive-item rule-3-1-item-hidden" ><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+						<tr class="  yjTableItem  inactive-item rule-3-1-item ">
+							
+							<td class="  yjTableItem rule_title">Mitoses </td>
+							<td class="rule_value"></td>
+							<td class="rule-hidden-column">아아</td>
+							<td class="rule_property Mitoses">-</td>
+							
+							
+
+						</tr>
+						<tr class="inactive-item rule-3-1-item-hidden" ><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+						<tr class="  yjTableItem  inactive-item rule-3-1-item " >
+						
+							
+							<td class="  yjTableItem rule_title">Increase of N/C ratio</td>
+							<td class="rule_value"></td>
+							<td class="rule-hidden-column">아아</td>
+							<td class="rule_property Increase">-</td>
+							
+						</tr>
+						<tr class="inactive-item rule-3-1-item-hidden" ><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+			 		</table>
+				</td>
+				<td >
+					<img class=" graybar-img" src="graybar.png"  style="margin:5px; display: block; width: auto; height: 100%; max-width: 1.0px;"  />
+				</td>
+				<td style="width: 32%;height: 100%">
+					<table class="rule-table-3-2 "  style="align-self: center;">					
+							<tr class="  yjTableItem  inactive-item rule-3-2-item">
+								
+								<td class=" yjTableItem rule_title  ">          Tubular type          </td>
+								<td class="rule_value">3</td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Tubular">-</td>
+							</tr>
+							<tr class="inactive-item rule-3-2-item-hidden" ><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem inactive-item rule-3-2-item">
+								
+								<td class=" yjTableItem  rule_title"   >Signet ring cell</td>
+								<td class="rule_value"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Signet">-</td>
+								
+							</tr>
+							<tr class="inactive-item rule-3-2-item-hidden"><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem inactive-item rule-3-2-item">
+								
+								<td class=" yjTableItem rule_title ">    Mucinous   </td>
+								<td class="rule_value"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Mucinous">-</td>
+								
+								
+							</tr>
+							<tr class="inactive-item rule-3-2-item-hidden"><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem inactive-item rule-3-2-item">
+								
+								<td class="  yjTableItem rule_title">Squamous </td>
+								<td class="rule_value"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Squamous">-</td>
+								
+								
+
+							</tr>
+							<tr class="inactive-item rule-3-2-item-hidden" ><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem inactive-item rule-3-2-item" >
+							
+								
+								<td class="  yjTableItem rule_title">Small cell</td>
+								<td class="rule_value"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Small">-</td>
+								
+							</tr>
+							<tr class="inactive-item rule-3-2-item-hidden"><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem inactive-item rule-3-2-item" >
+							
+								
+								<td class="  yjTableItem rule_title">Spindle cell</td>
+								<td class="rule_value"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Spindle">-</td>
+								
+							</tr>
+							<tr class="inactive-item rule-3-2-item-hidden"><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem inactive-item rule-3-2-item" >
+							
+								
+								<td class="  yjTableItem rule_title">Papilary</td>
+								<td class="rule_value"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Papilary">-</td>
+								
+							</tr>
+							<tr class="inactive-item rule-3-2-item-hidden" ><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+				 		</table>
+				</td>
+				<td>
+					<img class=" graybar-img" src="graybar.png"  style="margin:5px; display: block; width: auto; height: 100%; max-width: 1.0px;"  />
+				</td>
+				<td style="width: 32%;height: 100%">
+					<table class="rule-table-3-3 "  style="align-self: center;">					
+							<tr class="  yjTableItem inactive-item rule-3-3-item ">
+								
+								<td class=" yjTableItem rule_title  ">          Atypia         </td>
+								<td class="rule_value">2</td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Atypia">-</td>
+							</tr>
+							<tr class="inactive-item rule-3-3-item-hidden"><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem inactive-item rule-3-3-item">
+								
+								<td class=" yjTableItem  rule_title"   >Necrosis</td>
+								<td class="rule_value"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Necrosis">-</td>
+								
+							</tr>
+							<tr class="inactive-item rule-3-3-item-hidden"><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+							<tr class="  yjTableItem inactive-item rule-3-3-item ">
+								
+								<td class=" yjTableItem rule_title ">    Stromal invasion   </td>
+								<td class="rule_value"></td>
+								<td class="rule-hidden-column">아아</td>
+								<td class="rule_property Stromal">-</td>
+							</tr>
+							<tr class="inactive-item rule-3-3-item-hidden" ><td colspan="5" class="rule-hidden-row"> 부정적 에너지 </td></tr>
+				 		</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="main_right_1">
+		<div style="background-color: #FFE4E1;padding-top:5px">Diagnosis</div>
+		
+		<div align="Right">
+					<button   class="button inactive-item RDR-update-button" onclick="goToUpdate()">Update Rules</button>
+					<button   class="button inactive-item RDR-add-button" onclick="goToAdd()">Add Rules</button>
+					
+
+		</div>
+		<div ><textarea id="diagnosis-detail-textarea" class="diagnosis-detail" style=" width: 100%;height: 100%;padding: 8px" ></textarea></div>
+		<div style="background-color: #FFE4E1;padding-top:5px" >Memo</div>
+		<div id="memoId"></div>
+		<div> 
+			
+			<textarea id="memoTextBox" style="width: 100%;height: 100% ;padding: 8px"  onClick="this.select();" onblur="saveMemo()"  ></textarea>
+			
+			
+			
+
+		</div>
+		<div>
+			<button type="button"  class="button_center conclusion-btn" data-toggle="modal"  style="width: 85%;height: 75%; margin-top: 5px ; background-color: #CEE3FA;" > 최종 소견 미리보기 </button>
+		</div>
+		<div style="background-color: #FFE4E1;padding-top:5px">Relative Books</div>
+		
+		<div align="Right">
+				
+				<button type="button" class="button book-button" > More Books</button>
+
+		</div>
+		
+				<div style="overflow-y:scroll; overflow-x:hidden;">
+			<table class="book-item-container" style="width:98%;height: 100%; text-align: justify;">
+				<tr style="width: 98%;height: 20%; ">
+					<td colspan="2" class="topic-container">
+					 <a href="#" class="ui label topic-item" style="margin: 5px;"><span class="  keyword">aaaa</span></a>
+					</td>
+				</tr>
+				<tr  class="book-item">
+					<td colspan="2">
+						<img class=" graybar-img" src="graybar.png"  style="margin:5px; display: block; width: 100%; height: auto; max-height: 1.5px;"  />
+					</td>
+				</tr>
+
+				<tr class="book-item" style="width: 100%;height: 25%;">
+					<td rowspan="3"  style="width: 20%;" class="book-img">
+						<img class="book-img-contents" src="testImg.png"  style="margin:10px; display: block; width: 85px; height: auto; max-height: 100px;"  />
+					</td>
+					<td class="book-title" style="font-size: 1.2em; font-style: bold" >차차차제목</td>
+				</tr>
+				<tr class="book-item" style="height: 10%;margin-bottom: 1px ">
+					<td class="book-info" style="display: static">
+						<span class="book-year" style="margin: 0;padding: 0">sep 28,2011</span> by <span class="book-author" style="margin-bottom:1px: ;padding-bottom: 1em;">Keith Lillemoe MD and William Jarnagin MD</span>
+					</td>
+				</tr>
+				<tr class="book-item" style="padding-bottom: 1em; margin-bottom: 1px">
+					<td class="book-detail">
+						차차 세부내용
+					</td>
+				</tr>
+				
+
+			</table>
+		</div>
+		
+
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">최종소견</h4>
+	      </div>
+	      <div class="modal-body">
+	        <table class="table table-bordered " >
+	        	<tr>
+	        		<td >차트번호</td>
+	        		<td colspan="2"  class="p-chartNumber"> 1231321</td>
+					<td>병원</td>
+	        		<td colspan="2" class="p-hospital"> 차움병원</td>
+	        	</tr>
+	        	<tr>
+	        		<td>접수일</td>
+	        		<td colspan="2" class="p-dateIn"> 1231321</td>
+					<td>검사일</td>
+	        		<td colspan="2" class="p-dateTest"> 차움병원</td>
+	        	</tr>
+	        </table>
+	        <table class="table table-bordered ">
+	        	<tr>
+	        		<td>환자명</td>
+	        		<td colspan="2"  class="p-patientName"> 김영희</td>
+					<td>주민번호</td>
+	        		<td colspan="2" class="p-securityNumber"> 920609-155545</td>
+	        	</tr>
+	        	<tr>
+	        		<td>나이</td>
+	        		<td colspan="2" class="p-age"> 12</td>
+					<td>성별</td>
+	        		<td colspan="2" class="p-gender"> F</td>
+	        	</tr>
+	        </table>
+	        <div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Gross Description</h3>
+			  </div>
+			  <div class="panel-body p-gross">
+			    Panel content
+			  </div>
+			</div>
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Microscopic Findings</h3>
+			  </div>
+			  <div class="panel-body">
+			    <table class="table table-bordered micro-table-container">
+			    	<tr class="micro-table-item">
+			    		<td class="micro-name"> </td>
+			    		<td class="micro-value"> </td>
+			    	</tr>
+			    </table>
+			  </div>
+			</div>
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Pathological Diagnosis</h3>
+			  </div>
+			  <div class="panel-body diagnosis-detail" id="diagnosis-detail-modal">
+			    Panel content
+			  </div>
+			</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default confirm-btn" data-dismiss="modal">최종 소견 확정</button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="modal-change-table modal fade in inactive-item" id="change_table_modal" area-hidden="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-change-table-back modal-backdrop fade in inactive-item" style="height: 100%; " ></div>
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="changeTableModal(0,0)"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel"></h4>
+	      </div>
+	      <div class="modal-body">
+	     	 <div class=" change-table-modal-body1"></div>
+	     	 <p/>
+	     	 <div class=" change-table-modal-body2"></div>
+	
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default change-table-modal-btn" data-dismiss="modal">ChangeTable</button>
+	        <button type="button" class="btn btn-default keep-table-modal-btn" data-dismiss="modal">현재 값 유지</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+<script src="tableControl.js"></script>
+
+ 
+  
+
+</body>
+</html>
+

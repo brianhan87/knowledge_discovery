@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title> TEST PAGE </title>
+    <!-- Style -->
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <script src="jquery.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="client.js"></script>
+  
+    <style>
+  
+     .inactive-item {
+    	display: none;
+    }
+
+   	.inactive-item-gray {
+    	background-color: #cfcfcf;
+    }
+   
+    </style>
+</head>
+
+
+<body onload='loadInitialTable()' >
+	
+	<div class="col-md-4 contents-detail-wrapper" style="float: left; width: 15% ;display:inline;">
+		<p style="height: 50%">
+	  	<table border="2">
+	  		<tr>
+	  			<th>Topology</th>
+	  		</tr>
+	  		<tr>
+	  			<td>Morphology</td>
+	  		</tr>
+	  		<tr>
+	  		<td><button id="gast-btn" type="button" class="gast-get-contents">[1]위염(Gastritis) </button></td>
+	  		</tr>
+
+	  		<tr>
+	  		<td><button id="ployp-btn"  type="button" class="ployp-get-contents">[2]용종(Ployp) </button></td>
+	  		</tr>
+	  		<tr>
+	  		<td><button id="adenoma-btn"  type="button" class="adenoma-get-contents">[3]선종/선암/암종(Adenoma/Adenocarcinoma/Carcinoma) </button></td>
+	  		</tr>
+	  	</table>
+	  	</p>
+	  	<p style="height: 25%">
+	  	<button id="value-check-btn"  type="button" class="val-get-contents">값 가져오기 </button><
+	  	
+	  	</p>
+	</div>
+
+	
+
+
+	<div style="float: left; width: 30%; ;display:inline;">
+	  <div class="col-md-8 table1">
+		<table class="table table-bordered contents-item-container ">
+			<tr>
+				
+				<th>Stomach</th>
+			</tr>
+			<tr>
+				<th colspan="3" width: 30%;>Features</th>
+				<th width: 20%;>Description</th>
+				<th width: 10%;>Value</th>
+			</tr>
+			<tr>
+				<td colspan="5" class="btn3-header" >Nucleus</td>
+			</tr>	
+			<tr >
+				<td class="content-id-1"></td>
+				<td class="content-title-1"></td>
+				<td class="content-range-1"></td>
+				<td class="content-description-1"> </td>
+				<td id="table1_var" class="content-value-1">  <input  type="number" class="content-value" maxlength='1' max=3 min=0 name="input_1" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(0);" onkeyup="nextCol(1,this,'input_2')"  step="1" width="30" value=0 ></td>
+			</tr>
+			<tr >
+				<td class="content-id-2"></td>
+				<td class="content-title-2"></td>
+				<td class="content-range-2"></td>
+				<td class="content-description-2"> </td>
+				<td id="table1_var" class="content-value-2">  <input type="number" class="content-value" maxlength='1'  max=3 min=0 name="input_2" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(1);" onkeyup="nextCol(1,this,'input_3')" step="1" width="30" value=0 ></td>
+			</tr>
+
+			<tr class="additional-2">
+				<td class="content-id-3"><input type="text" class="input-text text-id additional-2 " width="30"></td>
+				<td class="content-title-3"><input type="text" class="input-text text-title additional-2" onblur="saveTextValToArr()" width="30"></td>
+				<td class="content-range-3"><input type="text" class="input-text text-range additional-2" width="30"></td>
+				<td class="content-description-3"><input type="text" class="input-text text-description additional-2" width="30"></td>
+				<td id="table1_var" class="content-value-3">  <input type="number" class="content-value additional-2" maxlength='1' max=3 min=0 name="input_3" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(2);" onkeyup="nextCol(1,this,'input_4')" step="1" width="30" value=0 ></td>
+			</tr>
+			<tr class="additional-2">
+				<td class="content-id-4"><input type="text" class="input-text text-id additional-2" width="30"></td>
+				<td class="content-title-4"><input type="text" class="input-text text-title additional-2" onblur="saveTextValToArr()" width="30"></td>
+				<td class="content-range-4"><input type="text" class="input-text text-range additional-2" width="30"></td>
+				<td class="content-description-4"><input type="text" class="input-text text-description additional-2" width="30"></td>
+				<td id="table1_var" class="content-value-4">  <input type="number" class="content-value additional-2" maxlength='1' max=3 min=0 name="input_4" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(3);" onkeyup="nextCol(1,this,'input_5')" step="1" width="30" value=0  ></td>
+
+			</tr>
+			<tr class="additional-2" >
+			
+				<td class="content-id-5"><input type="text" class="input-text text-id additional-2" width="30"></td>
+				<td class="content-title-5"><input type="text" class="input-text text-title additional-2" onblur="saveTextValToArr()" width="30"></td>
+				<td class="content-range-5"><input type="text" class="input-text text-range additional-2" width="30"></td>
+				<td class="content-description-5"><input type="text" class="input-text text-description additional-2" width="30"></td>
+				<td id="table1_var" class="content-value-5">  <input type="number" class="content-value additional-2" maxlength='1' max=3 min=0 name="input_5" onClick="this.select();"  onfocus="this.select();"onblur="saveValueToTable(4);" onkeyup="nextCol(1,this,'input_6')" step="1" width="30" value=0 ></td>
+			
+			</tr>
+			<tr>
+				<td colspan="5" class="btn3-header"  >Grade</td>
+			</tr>
+			<tr class="additional-2 additional-1 ">
+			
+				<td class="content-id-6"><input type="text" class="input-text text-id additional-2 additional-1" width="30" value=""></td>
+				<td class="content-title-6"><input type="text" class="input-text text-title additional-2 additional-1 " onblur="saveTextValToArr()" width="30" value=""></td>
+				<td class="content-range-6"><input type="text" class="input-text text-range additional-2 additional-1" width="30" value=""></td>
+				<td class="content-description-6"><input type="text" class="input-text text-description additional-2 additional-1" width="30" value=""></td>
+				<td id="table1_var" class="content-value-6">  <input type="number" class="content-value additional-2 additional-1" maxlength='1' max=3 min=0 name="input_6"  onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(5);" step="1" onkeyup="nextCol(1,this,'input_7')" width="30" value=0  ></td>
+			
+			</tr>
+			<tr class="additional-2 additional-1">
+			
+				<td class="content-id-7"><input type="text" class="input-text text-id additional-2 additional-1"   width="30"></td>
+				<td class="content-title-7"><input type="text" class="input-text text-title additional-2 additional-1" onblur="saveTextValToArr()" width="30"></td>
+				<td class="content-range-7"><input type="text" class="input-text text-range additional-2 additional-1" width="30"></td>
+				<td class="content-description-7"><input type="text" class="input-text text-description additional-2 additional-1" width="30"></td>
+				<td id="table1_var" class="content-value-7">  <input type="number" class="content-value additional-2 additional-1" maxlength='1' max=3 min=0 name="input_7" onClick="this.select();" onfocus="this.select();" step="1" onblur="saveValueToTable(6);" onkeyup="nextCol(1,this,'input_8')" width="30" value=0  ></td>
+			
+			</tr>
+			<tr class="additional-2 additional-1">
+			
+				<td class="content-id-8"><input type="text" class="input-text text-id additional-2 additional-1" width="30"></td>
+				<td class="content-title-8"><input type="text" class="input-text text-title additional-2 additional-1" onblur="saveTextValToArr()" width="30"></td>
+				<td class="content-range-8"><input type="text" class="input-text text-range additional-2 additional-1" width="30"></td>
+				<td class="content-description-8"><input type="text" class="input-text text-description additional-2 additional-1" width="30"></td>
+				<td id="table1_var" class="content-value-8">  <input type="number" class="content-value additional-2 additional-1" maxlength='1' max=3 min=0 name="input_8" step="1" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(7);" onkeyup="nextCol(1,this,'input_9')" width="30" value=0  ></td>
+			</tr>
+			<tr class="additional-2 additional-1">
+
+				<td class="content-id-9 empty-item"><input type="text" class="input-text text-id additional-2 additional-1" width="30"></td>
+				<td class="content-title-9 empty-item"><input type="text" class="input-text text-title additional-2 additional-1" onblur="saveTextValToArr()" width="30"></td>
+				<td class="content-range-9 empty-item"><input type="text" class="input-text text-range additional-2 additional-1" width="30"></td>
+				<td class="content-description-9 empty-item"><input type="text" class="input-text text-description" width="30"></td>
+				<td id="table1_var" class="content-value-9 empty-item">  <input type="number" class="content-value additional-2 additional-1" maxlength='1' max=3 min=0 name="input_9" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(8);"  onkeyup="nextCol(1,this,'input_10')" step="1" width="30" value=0  ></td>
+			</tr>
+			<tr class="additional-2 additional-1">
+				<td class="content-id-10 empty-item"><input type="text" class="input-text text-id additional-2 additional-1" width="30"></td>
+				<td class="content-title-10 empty-item"><input type="text" class="input-text text-title additional-2 additional-1" onblur="saveTextValToArr()" width="30"></td>
+				<td class="content-range-10 empty-item"><input type="text" class="input-text text-range additional-2 additional-1" width="30"></td>
+				<td class="content-description-10 empty-item"><input type="text" class="input-text text-description additional-2 additional-1" width="30"></td>
+				<td id="table1_var" class="content-value-10 empty-item">  <input type="number" max=3 class="content-value additional-2 additional-1" maxlength='1' min=0 name="input_10" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(9);" onkeyup="nextCol(1,this,'input_11')" step="1" width="30" value=0  ></td>
+			</tr>
+		</table>
+	  </div>
+
+
+	<div style="float: left; width: 30%; display:inline;">
+	  <div class="col-md-8  table2">
+		<table class="table table-bordered contents-item-container">
+			<tr class="table2-header" >
+				<th colspan="3">Features</th>
+				<th>Description</th>
+				<th>Value</th>
+			<tr>
+				<td  colspan="5" class="btn3-header" >Cytoplasm</td>
+			</tr>
+			</tr>	
+
+				<tr class="additional-2  additional-1" >
+				<td class="content-id-11"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-11"><input type="text" class="input-text text-title additional-2  additional-1 " onblur="saveTextValToArr()"></td>
+				<td class="content-range-11"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-11"><input type="text" class="input-text text-description additional-2 additional-1 "> </td>
+				<td class="content-value-11">  <input type="number" max=3 min=0 name="input_11" class="content-value" step="1" width="30" name="input_11" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(10);" onkeyup="nextCol(1,this,'input_12')"  value=0  ></td>
+			</tr>
+			<tr class="additional-2 additional-1">
+				<td class="content-id-12"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-12"><input type="text" class="input-text text-title additional-2 additional-1 "onblur="saveTextValToArr()"></td>
+				<td class="content-range-12"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-12"><input type="text" class="input-text text-description additional-2 additional-1 "> </td>
+				<td class="content-value-12">  <input type="number" max=3 min=0 name="input_12" class="content-value" step="1" width="30" name="input_12" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(11);" onkeyup="nextCol(1,this,'input_13')" value=0 ></td>
+			</tr>
+			<tr class="additional-2 additional-1" >
+				<td class="content-id-13"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-13"><input type="text" class="input-text text-title additional-2 additional-1 "onblur="saveTextValToArr()"></td>
+				<td class="content-range-13"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-13"><input type="text" class="input-text text-description additional-2 additional-1 "></td>
+				<td class="content-value-13">  <input type="number" max=3 min=0 name="input_13" class="content-value" step="1" width="30" name="input_13" onClick="this.select();" onfocus="this.select();" onblur="saveValueToTable(12);" onkeyup=" nextCol(1,this,'input_14')" value=0  ></td>
+			</tr>
+			<tr class="additional-2 additional-1" >
+				<td class="content-id-14"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-14"><input type="text" class="input-text text-title additional-2 additional-1 "onblur="saveTextValToArr()"></td>
+				<td class="content-range-14"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-14"><input type="text" class="input-text text-description additional-2 additional-1 "></td>
+				<td class="content-value-14">  <input type="number" max=3 min=0 name="input_14" class="content-value" step="1" width="30" name="input_14" onClick="this.select();" onfocus="this.select();"  onblur="saveValueToTable(13);" onkeyup="nextCol(1,this,'input_15')" value=0  ></td>
+			</tr>
+			<tr class="additional-2 additional-1">
+				<td class="content-id-15"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-15"><input type="text" class="input-text text-title additional-2 additional-1 "onblur="saveTextValToArr()"></td>
+				<td class="content-range-15"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-15"><input type="text" class="input-text text-description additional-2 additional-1 "></td>
+				<td class="content-value-15">  <input type="number" max=3 min=0 name="input_15"  class="content-value" step="1" width="30" name="input_15" onClick="this.select();" onfocus="this.select();"  onblur="saveValueToTable(14);"  onkeyup="nextCol(1,this,'input_16')" value=0  ></td>
+			</tr>
+		
+			<tr class="additional-2  additional-1">
+				<td class="content-id-16"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-16"><input type="text" class="input-text text-title additional-2 additional-1 "onblur="saveTextValToArr()"></td>
+				<td class="content-range-16"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-16"><input type="text" class="input-text text-description additional-2 additional-1 "></td>
+				<td class="content-value-16">  <input type="number" max=3 min=0 name="input_16" class="content-value" step="1" width="30" name="input_16" onClick="this.select();" onfocus="this.select();"  onblur="saveValueToTable(15);" onkeyup="nextCol(1,this,'input_17')" value=0  ></td>
+			</tr>
+			<tr class="additional-2 additional-1" >
+				<td class="content-id-17"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-17"><input type="text" class="input-text text-title additional-2 additional-1 "onblur="saveTextValToArr()"></td>
+				<td class="content-range-17"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-17"><input type="text" class="input-text text-description additional-2 additional-1 "></td>
+				<td class="content-value-17">  <input type="number" max=3 min=0 name="input_17" class="content-value" step="1" width="30" name="input_17" onClick="this.select();"  onfocus="this.select();" onblur="saveValueToTable(16);" onkeyup="nextCol(1,this,'input_18')" value=0 ></td>
+			</tr>
+			<tr class="additional-2 additional-1 additional-3">
+				<td class="content-id-18"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-18"><input type="text" class="input-text text-title additional-2 additional-1 "onblur="saveTextValToArr()"></td>
+				<td class="content-range-18"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-18"><input type="text" class="input-text text-description additional-2 additional-1 "></td>
+				<td class="content-value-18">  <input type="number" max=3 min=0 name="input_18" class="content-value" step="1" width="30" onClick="this.select();" name="input_18" onfocus="this.select();" onblur="saveValueToTable(17);" onkeyup="nextCol(1,this,'input_19')" value=0 ></td>
+			</tr>
+			<tr class="additional-2 additional-1 additional-3">
+				<td class="content-id-19"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-19"><input type="text" class="input-text text-title additional-2 additional-1 "onblur="saveTextValToArr()"></td>
+				<td class="content-range-19"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-19"><input type="text" class="input-text text-description additional-2 additional-1 "></td>
+				<td class="content-value-19">  <input type="number" max=3 min=0 name="input_19"  class="content-value" step="1" width="30" onClick="this.select();" name="input_19" onfocus="this.select();"  onblur="saveValueToTable(18);" onkeyup="nextCol(1,this,'input_20')" value=0  ></td>
+			</tr>
+			<tr class="additional-2  additional-1 additional-3">
+				<td class="content-id-20"><input type="text" class="input-text text-id additional-2 additional-1 "></td>
+				<td class="content-title-20"><input type="text" class="input-text text-title additional-2 additional-1 "onblur="saveTextValToArr()"></td>
+				<td class="content-range-20"><input type="text" class="input-text text-range additional-2 additional-1 "></td>
+				<td class="content-description-20"><input type="text" class="input-text text-de additional-2 additional-1 "></td>
+				<td class="content-value-20">  <input type="number" max=3 min=0 name="input_20" class="content-value"  step="1" width="30" onClick="this.select();" onfocus="this.select();"  onblur="saveValueToTable(19);" name="input_20"  value=0  ></td>
+			</tr>
+		</table>
+	  </div>
+	 
+</body>
+
+<script src="main.js"></script>
+</html>

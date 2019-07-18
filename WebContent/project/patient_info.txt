@@ -1,0 +1,258 @@
+﻿{
+	"contents_list": [{
+			"id": "0100872",
+			"name": "김윤종",
+			"doctor": "이병두",
+			"date_test": "2016-05-09",
+			"hospital": "서울병원",
+
+			"gender": "M",
+			"chart_num": "AC1235",
+			"security_num": "92XXXX-1XXXXXX",
+			"age": "26",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "미작업",
+			"date_in": "2016-12-07",
+			"remark": "Stomach, lower body, endoscopic biopsy: Chronic gastritis Healing erosion ",
+			"gross": "Specimen received in formalin are 3 discs of grayish white mucosal tissue, in toto in 1.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": "0100873",
+			"name": "이효진",
+			"doctor": "이병두",
+			"date_test": "2016-11-19",
+			"hospital": "제천의원",
+
+			"gender": "F",
+			"chart_num": "AC1236",
+			"security_num": "920609-2110141",
+			"age": "26",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "Cecum, colonoscopic polypectomy: Hyperplastic polyp ",
+			"gross": "Specimen received in formalin is 1 polypoid grayish white mucosal tissue, measuring 0.7x0.5x0.3cm, in toto in 1.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": " 0100812",
+			"name": "김상득",
+			"doctor": "이병두",
+			"date_test": "2016-8-11",
+			"hospital": "차내과",
+
+			"gender": "M",
+			"chart_num": "AC1237",
+			"security_num": "63XXXX-1XXXXXX",
+			"age": "55",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "미작업",
+			"date_in": "2016-12-07",
+			"remark": "Stomach, antrum, endoscopic biopsy: Hyperplastic polyp",
+			"gross": "Specimen received in formalin is 1 disc of grayish white mucosal tissue, in toto in 1.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": "0100876",
+			"name": "김효인",
+			"doctor": "이병두",
+			"date_test": "2016-05-01",
+			"hospital": "힘찬병원",
+
+			"gender": "M",
+			"chart_num": "AC1238",
+			"security_num": "79XXXX-2XXXXXX",
+			"age": "39",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "Stomach, antrum, endoscopic biopsy: Chronic gastritis",
+			"gross": "Specimen received in formalin is 1 disc of grayish white mucosal tissue, in toto in 1.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": "0100871",
+			"name": "도현진",
+			"doctor": "이병두",
+			"date_test": "2016-05-03",
+			"hospital": "성남의원",
+
+			"gender": "M",
+			"chart_num": "AC1239",
+			"security_num": "88XXXX-2XXXXXX",
+			"age": "30",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "Cecum, ileocecal valve, colonoscopic biopsy: Acute and chronic inflammation with erosion and granulation tissue",
+			"gross": "Specimen received in formalin is 1 disc of grayish white mucosal tissue, in toto in 1.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": "1100112",
+			"name": "김승윤",
+			"doctor": "이병두",
+			"date_test": "2016-05-04",
+			"hospital": "조치과의원",
+
+			"gender": "M",
+			"chart_num": "AC1231",
+			"security_num": "55XXXX-1XXXXXX",
+			"age": "68",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "Uterus, cervix, polypectomy: Endocervical polyp",
+			"gross": "Submitted is a polypoid gray white mucosal tissue, measuring 1x0.8x0.4cm,  in toto in 1.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": "0100372",
+			"name": "지인애",
+			"doctor": "이병두",
+			"date_test": "2016-04-09",
+			"hospital": "조은병원",
+
+			"gender": "M",
+			"chart_num": "AC1215",
+			"security_num": "86XXXX-2XXXXXX",
+			"age": "32",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "Skin, scalp, excisional biopsy: Seborrheic keratosis",
+			"gross": "Received in formalin is a piece of greyish-tan and brownish-tan,soft and firm tissue measuring 1x0.8x0.6cm. Entirely embedded, 2S.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": "0120852",
+			"name": "이상묵",
+			"doctor": "이병두",
+			"date_test": "2016-11-11",
+			"hospital": "굿월병원",
+
+			"gender": "M",
+			"chart_num": "AC1135",
+			"security_num": "77XXXX-1XXXXXX",
+			"age": "41",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "01.Rectum, colonoscopic biopsy: Inflammatory polyp 02.Rectum, colonoscopic biopsy: Inflammatory polyp 03.Rectum, colonoscopic biopsy: Inflammatory polyp 04.Rectum, colonoscopic biopsy: Inflammatory polyp",
+			"gross": "1.Specimen received in formalin is 1 disc of grayish white mucosal tissue, in toto in 1. 2.Specimen received in formalin is 1 disc of grayish white mucosal tissue, in toto in 2. 3.Specimen received in formalin is 1 disc of grayish white mucosal tissue, in toto in 3. 4.Specimen received in formalin is 1 disc of grayish white mucosal tissue, in toto in 4.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": " 0100372",
+			"name": "구인지",
+			"doctor": "이병두",
+			"date_test": "2016-05-09",
+			"hospital": "성동구병원",
+
+			"gender": "M",
+			"chart_num": " AC1211",
+			"security_num": "82XXXX-2XXXXXX",
+			"age": "36",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "Breast, right, gun biopsy: Fibroadenomatoid  hyperplasia",
+			"gross": "Submitted received in formalin are 2  cores of the gun biopsied linear whitish soft tissue, measuring 0.8x0.1cm in length, embedded in totoin 1.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": "0110872",
+			"name": "원상현",
+			"doctor": "이병두",
+			"date_test": "2016-10-01",
+			"hospital": "재천병원",
+
+			"gender": "M",
+			"chart_num": "AC1299",
+			"security_num": "66XXXX-1XXXXXX",
+			"age": "52",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "Skin, scalp, excisional biopsy: Seborrheic keratosis",
+			"gross": "Received in formalin is a piece of greyish-tan and brownish-tan,soft and firm tissue measuring 1x0.8x0.6cm. Entirely embedded, 2S.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": "0101232",
+			"name": "이진세",
+			"doctor": "이병두",
+			"date_test": "2016-05-19",
+			"hospital": "서울병원",
+
+			"gender": "M",
+			"chart_num": " AC1231",
+			"security_num": "82XXXX-1XXXXXX",
+			"age": "36",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "Placenta, biopsy: Mainly amniotic membrane with few decidual tissue only ",
+			"gross": "The specimen submitted in formalin consist of product of delivary, including pieces of somewhat membranous tissue, measuring 19x10.5x0.6cm in aggregates. Representative sections are embedded in 1-1 to 1-5.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}, {
+			"id": "6100811",
+			"name": "이상효",
+			"doctor": "이병두",
+			"date_test": "2016-02-20",
+			"hospital": "아산병원",
+
+			"gender": "M",
+			"chart_num": "AC2235",
+			"security_num": "93XXXX-1XXXXXX",
+			"age": "25",
+			"result_1": "Y",
+			"result_2": "N",
+			"state": "판독완료",
+			"date_in": "2016-12-07",
+			"remark": "Uterus, cervix, polypectomy: Endocervical polyp",
+			"gross": "Submitted is a polypoid gray white mucosal tissue, measuring 1x0.8x0.4cm,  in toto in 1.",
+			"seq": "01",
+			"loc-info":"K25GALC ",
+			" cell-parameter":"1"
+
+		}
+
+	],
+	"total_cnt": "5"
+}
