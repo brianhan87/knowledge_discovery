@@ -65,6 +65,7 @@ public class SimpleResource {
 		// TODO Auto-generated method stub
 		SimpleResource r = new SimpleResource();
 		r.makeLog("hi", "requested_ip");
+		System.out.println("API resource open...");
 	}
 	
 	static LogControl lc = new LogControl();
